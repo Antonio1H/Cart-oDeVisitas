@@ -55,7 +55,7 @@ fun BusinessCard(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Coloca a imagem na tela
+            //
             Image(
                 painter = painterResource(id = R.drawable._0eb6413fd7efa77acfb2d46e3efa34a),
                 contentDescription = "Descrição da imagem",
