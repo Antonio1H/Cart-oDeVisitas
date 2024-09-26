@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -23,9 +24,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.LineHeightStyle
@@ -48,6 +51,17 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier) {
     Surface(color = Color(0,0,0)) {
+
+        Surface {
+            Image(
+                painter = painterResource(id = R.drawable.papel_de_parede_estrelado),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxSize(),
+                contentScale = ContentScale.Crop // Isso ajusta a imagem para preencher a tela
+            )
+        }
+
         Column (
            modifier = modifier
                .fillMaxHeight()
@@ -57,11 +71,13 @@ fun BusinessCard(modifier: Modifier = Modifier) {
         ) {
             //
             Image(
-                painter = painterResource(id = R.drawable._0eb6413fd7efa77acfb2d46e3efa34a),
+                painter = painterResource(id = R.drawable.minha_foto
+                ),
                 contentDescription = "Descrição da imagem",
                 modifier = modifier
                     .height(120.dp)
                     .width(120.dp)
+                    .clip(CircleShape)
 
             )
             // Adiciona um texto abaixo da imagem
